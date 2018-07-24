@@ -61,6 +61,16 @@ sudo add-apt-repository "deb http://jevois.usc.edu/apt xenial main"  # replace x
 sudo apt update
 sudo apt upgrade
 
+For this error:
+E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
+E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+
+just kill the dpkg to restart the process: 
+
+sudo kill -TERM    15004
+
+and proceed ahead to upgrade command. 
+
 - If you want everything to be able to compile C++ modules for JeVois and flash to microSD:
 
           sudo apt install jevois-sdk-dev
